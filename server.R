@@ -13,7 +13,7 @@ function(input, output) {
     }
     
     if (input$density) {
-      p <- p + geom_density(colour="blue",
+      p <- p + geom_density(colour="red",
                          adjust=input$bw_adjust)
     }
     print(p)
@@ -25,7 +25,7 @@ function(input, output) {
       geom_point(size = input$point.size, alpha = 0.8) +
       labs(title = "Geyser eruption vs. waiting time", 
            x = "Duration (minutes)", 
-           y = "Waiting time")
+           y = "Waiting time") 
     print(scatter)
     if (input$smooth.line) {
       print(scatter+geom_smooth(method = "lm", se = FALSE))
